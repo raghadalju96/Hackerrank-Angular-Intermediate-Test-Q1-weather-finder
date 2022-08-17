@@ -1,0 +1,51 @@
+<div class="weather-data layout-column align-items-center mt-50">
+  <section class="layout-row align-items-center justify-content-center">
+    <input
+      type="text"
+      class="large ml-30"
+      placeholder="Dallas"
+      [(ngModel)]="CityName"
+      data-test-id="app-input"
+    />
+    <button class="" (click)="search()" data-test-id="submit-button">
+      Search
+    </button>
+  </section>
+
+  <section class="mt-20 layout-row align-items-center justify-content-center">
+    <div class="card outlined">
+      <div
+        *ngIf="showDetails"
+        data-test-id="weather-details"
+        class="card-text pt-10 layout-row justify-content-between"
+      >
+        <div class="mt-20 outlined">
+          <i *ngIf="isHot" data-test-id="icon-sunny" class="material-icons"
+            >wb_sunny</i
+          >
+          <i *ngIf="isCold" data-test-id="icon-cold" class="material-icons"
+            >ac_unit</i
+          >
+          <span data-test-id="result-temperature" class="temperature">{{
+            cityWeather
+          }}</span>
+        </div>
+        <div class="mr-15 mb-15">
+          <div data-test-id="result-wind" class="mt-20">
+            {{ cityWind }}
+          </div>
+          <div data-test-id="result-humidity" class="mt-20">
+            {{ cityHumidity }}
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="showNoResult"
+        data-test-id="no-result"
+        class="layout-row justify-content-center align-items-center card-text"
+      >
+        No Results Found
+      </div>
+    </div>
+  </section>
+</div>
