@@ -27,15 +27,15 @@
             >ac_unit</i
           >
           <span data-test-id="result-temperature" class="temperature">{{
-            cityWeather
+            CityWeatherDetails[0].weather
           }}</span>
         </div>
         <div class="mr-15 mb-15">
           <div data-test-id="result-wind" class="mt-20">
-            {{ cityWind }}
+            {{ CityWeatherDetails[0].status[0] }}
           </div>
           <div data-test-id="result-humidity" class="mt-20">
-            {{ cityHumidity }}
+            {{ CityWeatherDetails[0].status[1] }}
           </div>
         </div>
       </div>
